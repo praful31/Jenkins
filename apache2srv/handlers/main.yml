@@ -1,0 +1,6 @@
+---
+# handlers file for apache2srv
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted

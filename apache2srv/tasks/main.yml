@@ -1,0 +1,45 @@
+---
+# tasks file for apache2srv
+- name: Package Installation
+  package:
+    name: nginx 
+    state: present
+
+- name: Download Template For Run On Apache Web Server
+  get_url:
+    url: https://www.free-css.com/assets/files/free-css-templates/download/page278/brandon.zip
+    dest: /usr/share/nginx/html
+
+- name: install package unzip
+  package:
+    name: unzip
+    state: latest
+
+- name: Extracting The Downloaded Template
+  unarchive:
+    src: /usr/share/nginx/html/brandon.zip
+    dest: /var/www/html
+    remote_src: true
+
+- name: move Index.html file and data 
+  shell: mv /var/www/html/brandon/* /var/www/html
+
+# - name: Copy Configuration File
+#   copy:
+#     src: apache2srv/files/ws.conf
+#     dest: /etc/nginx/
+
+- name: Start & Enable nginx service
+  service:
+    name: nginx
+    state: started
+    enabled: true
+
+  notify:
+    - restart nginx
+
+
+
+
+
+

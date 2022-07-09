@@ -1,0 +1,8 @@
+# Attach Role
+---
+- name: Role
+  hosts: all
+  become: true
+  roles:
+    - apache2srv
+
