@@ -9,7 +9,7 @@ pipeline {
         }
         stage('demo') {
             steps {
-                echo 'Welcome To My First Pipeline' >> file3.txt
+                sh 'echo welcome nagpur >> file5.txt'
             }
         }
         stage('demo2') {
