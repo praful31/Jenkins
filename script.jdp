@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git')
+            steps {
+                git 'https://github.com/praful31/nginx.git'
+            }
+        }
+        stage('msg')
+            steps {
+                sh 'echo welcome nagpur >>file5.txt'
+            }
+        stages('dir')
+            steps {
+                sh 'mkdir cloud'
+            }   
+}
