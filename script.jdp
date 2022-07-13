@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git') {
+            steps {
+                git 'https://github.com/praful31/nginx.git'
+            }
+        }
+        stage('demo') {
+            steps {
+                echo 'Welcome To My First Pipeline' >> file3.txt
+            }
+        }
+        stage('demo2') {
+            steps {
+                sh 'mkdir cbz1'
+                sh 'touch file5'
+            }
+        }    
+    }
+}
