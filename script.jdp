@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'echo welcome nagpur >>file5.txt'
             }
-        stages('dir')
+        stage('dir')
             steps {
                 sh 'mkdir cloud'
             }   
