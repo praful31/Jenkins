@@ -8,6 +8,6 @@ job('job_by_seed') {
         }
     }
     steps {
-         shell('echo successfully implemented item')
+         sh 'echo \'successfully deployed\' >> home.txt' 
     }
 }
