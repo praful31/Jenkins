@@ -1,9 +1,9 @@
-job('job_by_seed') {
+job('job_by_seed2') {
     scm {
         git {
             remote {
                 name('origin')
-                url('https://github.com/swapnibrad/shubham_b.git')
+                url('https://github.com/praful31/repo-ssh.git')
             }
         }
     }
