@@ -14,8 +14,8 @@ pipeline {
         }
         stage('demo2') {
             steps {
-                sh 'mkdir cbz1'
-                sh 'touch file5'
+                sh 'mkdir cbz9'
+                sh 'touch file10'
             }
         }    
     }
