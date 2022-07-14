@@ -3,7 +3,7 @@ job('demo2byGit') {
         git {
             remote {
                 name('origin')
-                url('https://github.com/praful31/Jenkins.git')
+                url('https://github.com/praful31/Jenkins.git')4
                }
         }
     }
