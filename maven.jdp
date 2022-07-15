@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/praful31/studentapp-ui.git'
             }
         }
-         stage('install') { 
+        stage('install') { 
             steps {
                 sh 'chown root /ubuntu' 
             }
