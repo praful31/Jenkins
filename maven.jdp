@@ -1,0 +1,11 @@
+pipeline {
+    agent {label 'N1'}
+
+    stages {
+        stage('git') {
+            steps {
+                git 'https://github.com/praful31/studentapp-ui.git'
+            }
+        }
+    }
+}
