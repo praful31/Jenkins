@@ -1,9 +1,6 @@
 pipeline {
     agent {label 'N1'}
 
-    tools {
-        maven 'Maven 3.8.6'
-    }
     stages {
         stage('git') {
             steps {
