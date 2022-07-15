@@ -9,7 +9,7 @@ pipeline {
         }
         stage('chown') { 
             steps {
-                sh 'chown root /ubuntu' 
+                sh "mvn clean verify"
             }
         }
         stage('install') { 
