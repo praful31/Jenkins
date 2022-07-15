@@ -1,29 +1,17 @@
 pipeline {
     agent {label 'N1'}
 
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
     stages {
         stage('git') {
             steps {
                 git 'https://github.com/praful31/studentapp-ui.git'
             }
         }
-        stage('chown') { 
-            steps {
-                sh "mvn clean verify"
-            }
-        }
-        stage('install') { 
-            steps {
-                sh 'apt install maven -y' 
-            }
-        }
-        stage('Build') { 
-            steps {
-                sh 'mvn clean package' 
-            }
-        }
-
-
+        
         
     }
 }
