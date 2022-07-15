@@ -7,12 +7,12 @@ pipeline {
                 git 'https://github.com/praful31/studentapp-ui.git'
             }
         }
-    stage('Build') { 
+        stage('install') { 
             steps {
                 sh 'apt install maven -y' 
             }
         }
-    stage('Build') { 
+        stage('Build') { 
             steps {
                 sh 'mvn clean package' 
             }
