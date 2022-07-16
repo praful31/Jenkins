@@ -24,5 +24,10 @@ pipeline {
                 sh 'sudo /mnt/apache-tomcat-8.5.81/bin/catalina.sh start'
             }
         }
+        stage('Copy_Student_war') {
+            steps {
+                sh 'sudo cp /home/ubuntu/workspace/pipeline_for_maven/target/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.81/webapps/'
+                }
+        }
     }
 }
