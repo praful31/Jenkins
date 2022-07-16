@@ -19,7 +19,9 @@ pipeline {
         }
         stage('Tomcat_Install') {
             steps {
-                sh 'sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz'
+                dir('cd /mnt') {
+                    sh 'sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz'
+                }
             }
         }
     }
