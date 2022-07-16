@@ -7,7 +7,11 @@ pipeline {
                 git 'https://github.com/praful31/studentapp-ui.git'
             }
         }
-        
+        stage('usr_to_root') {
+            steps {
+                sh 'sudo -i'
+            }
+        }
         
     }
 }
