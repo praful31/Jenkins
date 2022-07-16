@@ -12,6 +12,10 @@ pipeline {
                 sh 'sudo -i'
             }
         }
-        
+        stage('install maven') {
+            steps {
+                sh 'apt install maven -y'
+            }
+        }
     }
 }
