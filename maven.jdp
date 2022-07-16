@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'sudo -i'
                 sh 'sudo cd /mnt'
-                sh 'sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz'
+                sh 'sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz'
                 sh 'sudo tar -xvzf /mnt/apache-tomcat-8.5.81.tar.gz -C /mnt'
             }
         }
