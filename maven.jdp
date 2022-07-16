@@ -10,20 +10,8 @@ pipeline {
         stage('usr_to_root') {
             steps {
                 sh 'sudo -i'
-            }
-        }
-        stage('install maven') {
-            steps {
                 sh 'sudo apt install maven -y'
-            }
-        }
-        stage('mvn_clean') { 
-            steps {
                 sh 'sudo mvn clean package' 
-            }
-        }
-        stage('update') { 
-            steps {
                 sh 'sudo apt-get update' 
             }
         }
