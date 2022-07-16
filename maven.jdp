@@ -2,7 +2,7 @@ pipeline {
     agent {label 'N1'}
 
     stages {
-        stage('git') {
+        stage('gitpull') {
             steps {
                 git 'https://github.com/praful31/studentapp-ui.git'
             }
@@ -15,6 +15,11 @@ pipeline {
         stage('install maven') {
             steps {
                 sh 'sudo apt install maven -y'
+            }
+        }
+        stage('mvn_clean') { 
+            steps {
+                sh 'sudo mvn clean package' 
             }
         }
     }
