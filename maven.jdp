@@ -7,12 +7,20 @@ pipeline {
                 git 'https://github.com/praful31/studentapp-ui.git'
             }
         }
-        stage('usr_to_root') {
+        stage('Maven_Install') {
             steps {
                 sh 'sudo -i'
+                sh 'sudo apt update'
+                sh 'sudo apt install openjdk-11-jre-headless -y '
                 sh 'sudo apt install maven -y'
                 sh 'sudo mvn clean package' 
-                sh 'sudo apt-get update' 
+                sh 'sudo apt update' 
+            }
+        }
+        stage('Tomcat_Install') {
+            steps {
+                sh 'sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz.asc'
+                sh 'sudo tar -xvzf apache-tomcat-8.5.81.tar.gz -C /mnt'
             }
         }
     }
